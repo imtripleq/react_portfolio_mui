@@ -24,19 +24,19 @@ import avatar from "../img/avatar.jpg";
 import { makeStyles } from "@mui/styles";
 
 // CSS Styles
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 250,
     height: "100%",
-    background: "#950740",
+    background: "#45A29E",
   },
   avatar: {
     display: "block",
     margin: "20% auto",
-    border: "2px solid #1A1A1D",
+    border: "2px solid #0B0C10",
   },
   listItem: {
-    color: "white",
+    color: "#0B0C10",
   },
 }));
 
@@ -86,7 +86,9 @@ const Navbar = () => {
       <List>
         {menuItems.map((item, key) => (
           <ListItem button key={key}>
-            <ListItemIcon>{item.listIcon}</ListItemIcon>
+            <ListItemIcon style={{ color: "#1F2833" }}>
+              {item.listIcon}
+            </ListItemIcon>
             <ListItemText
               primary={item.listText}
               className={classes.listItem}
@@ -100,10 +102,10 @@ const Navbar = () => {
   return (
     <>
       <Box component="nav">
-        <AppBar position="static" style={{ background: "#C3073F" }}>
+        <AppBar position="static" style={{ background: "#1A1A1D" }}>
           <Toolbar>
             <IconButton onClick={toggleDrawer("right", true)}>
-              <MenuOutlined style={{ color: "white" }} />
+              <MenuOutlined style={{ color: "#66FCF1" }} />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Menu

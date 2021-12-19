@@ -10,10 +10,10 @@ const useStyles = makeStyles({
   avatar: { border: "2px solid #1A1A1D", marginBottom: "20px" },
   title: {
     fontSize: "4rem",
-    color: "#950740",
+    color: "white",
   },
   subtitle: {
-    color: "white",
+    color: "#66FCF1",
   },
   typeContainer: {
     position: "absolute",
@@ -24,22 +24,18 @@ const useStyles = makeStyles({
     textAlign: "center",
     zIndex: 1,
   },
+  firstSubtitle: {
+    color: "#66FCF1",
+    fontSize: "2rem",
+  },
 });
 
 const Header = () => {
   const classes = useStyles();
   return (
     <Box className={classes.typeContainer}>
-      <Grid container justifyContent="center">
-        <Avatar
-          className={classes.avatar}
-          src={avatar}
-          alt="Dennis Khor"
-          sx={{ width: 150, height: 150 }}
-        />
-      </Grid>
+      <h4 className={classes.firstSubtitle}>Hello World</h4>
       <h1 className={classes.title}>I'm Dennis Khor</h1>
-
       <br />
       <Typography className={classes.subtitle} variant="h5">
         <ReactTyped
