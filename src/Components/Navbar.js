@@ -24,7 +24,7 @@ import avatar from "../img/avatar.jpg";
 import { makeStyles } from "@mui/styles";
 
 // CSS Styles
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   menuSliderContainer: {
     width: 250,
     height: "100%",
@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// Menu Listing
 const menuItems = [
   {
     listIcon: <Home />,
@@ -59,17 +60,20 @@ const menuItems = [
   },
 ];
 
+// NavBar Starts Here
 const Navbar = () => {
   const [state, setState] = useState({
     right: false,
   });
 
+  //Toggle button
   const toggleDrawer = (slider, open) => () => {
     setState({ ...state, [slider]: open });
   };
 
   const classes = useStyles();
 
+  // Side Bar
   const sideList = (slider) => (
     <Box
       className={classes.menuSliderContainer}
@@ -106,10 +110,15 @@ const Navbar = () => {
           <Toolbar>
             <IconButton onClick={toggleDrawer("right", true)}>
               <MenuOutlined style={{ color: "#66FCF1" }} />
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{ flexGrow: 1 }}
+                style={{ color: "white", marginLeft: "10px" }}
+              >
+                Menu
+              </Typography>
             </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Menu
-            </Typography>
             <Drawer
               anchor="right"
               open={state.right}
