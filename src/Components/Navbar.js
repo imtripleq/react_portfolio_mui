@@ -12,6 +12,7 @@ import {
   ListItemIcon,
   ListItemText,
   Drawer,
+  Stack,
 } from "@mui/material";
 import {
   Apps,
@@ -27,13 +28,13 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles(() => ({
   menuSliderContainer: {
     width: 250,
-    height: "100%",
+    height: "100vh",
     background: "#45A29E",
   },
   avatar: {
     display: "block",
     margin: "20% auto",
-    border: "2px solid #0B0C10",
+    border: "1px solid #0B0C10",
   },
   listItem: {
     color: "#0B0C10",
@@ -48,7 +49,7 @@ const menuItems = [
   },
   {
     listIcon: <AssignmentInd />,
-    listText: "Resume",
+    listText: "About Me",
   },
   {
     listIcon: <Apps />,
@@ -75,7 +76,7 @@ const Navbar = () => {
 
   // Side Bar
   const sideList = (slider) => (
-    <Box
+    <Stack
       className={classes.menuSliderContainer}
       component="div"
       onClick={toggleDrawer(slider, false)}
@@ -84,13 +85,13 @@ const Navbar = () => {
         className={classes.avatar}
         src={avatar}
         alt="Dennis Khor"
-        sx={{ width: 150, height: 150 }}
+        sx={{ width: 150, height: 150, boxShadow: 15 }}
       />
       <Divider />
       <List>
         {menuItems.map((item, key) => (
           <ListItem button key={key}>
-            <ListItemIcon style={{ color: "#1F2833" }}>
+            <ListItemIcon style={{ color: "#0B0C10" }}>
               {item.listIcon}
             </ListItemIcon>
             <ListItemText
@@ -100,13 +101,16 @@ const Navbar = () => {
           </ListItem>
         ))}
       </List>
-    </Box>
+    </Stack>
   );
 
   return (
     <>
       <Box component="nav">
-        <AppBar position="static" style={{ background: "#1A1A1D" }}>
+        <AppBar
+          position="fixed"
+          style={{ background: "#1A1A1D", opacity: "0.75" }}
+        >
           <Toolbar>
             <IconButton onClick={toggleDrawer("right", true)}>
               <MenuOutlined style={{ color: "#66FCF1" }} />
@@ -120,7 +124,7 @@ const Navbar = () => {
               </Typography>
             </IconButton>
             <Drawer
-              anchor="right"
+              anchor="left"
               open={state.right}
               onClose={toggleDrawer("right", false)}
             >
