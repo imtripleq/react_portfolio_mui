@@ -4,6 +4,7 @@ import {
   CircularProgress,
   circularProgressClasses,
   createTheme,
+  Grid,
   Typography,
 } from "@mui/material";
 import { makeStyles, styled, ThemeProvider } from "@mui/styles";
@@ -13,18 +14,7 @@ import avatar from "../img/avatar.jpg";
 const Aboutme = () => {
   const theme = createTheme({
     typography: {
-      fontFamily: [
-        "-apple-system",
-        "BlinkMacSystemFont",
-        '"Segoe UI"',
-        "Roboto",
-        '"Helvetica Neue"',
-        "Arial",
-        "sans-serif",
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-      ].join(","),
+      fontFamily: ["Ropa Sans", "sans-serif"].join(","),
     },
   });
 
@@ -67,8 +57,7 @@ const Aboutme = () => {
     },
     bottom: {
       height: "65vh",
-      width: "50vw",
-      backgroundColor: "white",
+      width: "600px",
       display: "flex",
       flexDirection: "column",
       padding: "10px 10px",
@@ -77,6 +66,48 @@ const Aboutme = () => {
     progress: {},
   });
   const classes = useStyles();
+
+  const CircularProgressWithLabel = (props) => {
+    return (
+      <Box
+        sx={{
+          position: "relative",
+          display: "inline-flex",
+          margin: "10px 40px",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgress
+          variant="determinate"
+          value={props.percentage}
+          thickness={4.2}
+          size={150}
+          style={{ color: "#45A29E" }}
+        />
+        <Box
+          sx={{
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            position: "absolute",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+          <Typography variant="caption" component="div" color="#C5C6C7">
+            {props.language}
+          </Typography>
+          <Typography variant="h4" component="div" color="#C5C6C7">
+            {props.percentage}%
+          </Typography>
+        </Box>
+      </Box>
+    );
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -87,33 +118,48 @@ const Aboutme = () => {
               className={classes.avatar}
               src={avatar}
               alt="Dennis Khor"
-              sx={{ width: 150, height: 150, boxShadow: 15 }}
+              sx={{ width: 100, height: 100, boxShadow: 15 }}
             />
           </Box>
           <Box component="div" className={classes.right}>
             <Box component="div" className={classes.about}>
-              <Typography variant="h2">About Me</Typography>
+              <Typography variant="h2" fontFamily="Ropa Sans">
+                Let Me Introduce Myself
+              </Typography>
             </Box>
             <Box component="div" className={classes.paragraph}>
-              <Typography paragraph variant="body1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At iste
-                reiciendis quibusdam repellendus quod consectetur maxime sint
-                earum natus itaque libero nulla, nisi eveniet impedit vero.
-                Autem facilis explicabo tempora, amet beatae commodi neque
-                assumenda veritatis illum non sequi dolorum?
+              <Typography
+                paragraph
+                variant="h6"
+                fontFamily="Gelasio"
+                fontWeight="300"
+              >
+                Self-driven Front-End Developer with the ability to learn, adapt
+                and grow in different environments. Highly self-motivated,
+                responsible, with a get-it-done, on-time and high-quality
+                product spirit. A career changer who is ready to adapt and grow
+                in the new environment.
               </Typography>
             </Box>
           </Box>
         </Box>
         <Box component="div" className={classes.bottom}>
-          <Box component="div" className={classes.progress}>
-            <CircularProgress
-              variant="determinate"
-              value={90}
-              thickness={4.2}
-              size={200}
-            />
-          </Box>
+          <Grid
+            component="div"
+            className={classes.progress}
+            container
+            rowSpacing={2}
+            alignItems="flex - start"
+            justifyContent="center"
+          >
+            <CircularProgressWithLabel language="JavaScript" percentage={95} />
+            <CircularProgressWithLabel language="React.js" percentage={95} />
+            <CircularProgressWithLabel language="Python" percentage={85} />
+            <CircularProgressWithLabel language="CSS" percentage={90} />
+            <CircularProgressWithLabel language="HTML" percentage={90} />
+            <CircularProgressWithLabel language="Material.ui" percentage={90} />
+            <CircularProgressWithLabel language="Bootstrap" percentage={85} />
+          </Grid>
         </Box>
       </Box>
     </ThemeProvider>

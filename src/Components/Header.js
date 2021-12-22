@@ -36,12 +36,12 @@ const Header = () => {
   const TypeContainer = () => {
     return (
       <Box className={classes.typeContainer}>
-        <h4 className={classes.firstSubtitle}>Hello World</h4>
-        <h1 className={classes.title}>I'm Dennis Khor</h1>
+        <h4 className={classes.firstSubtitle}> H e l l o W o r l d.</h4>
+        <h1 className={classes.title}>I'm Dennis Khor.</h1>
         <br />
         <Typography className={classes.subtitle} variant="h5">
           <ReactTyped
-            strings={["A FrontEnd Developer", "Software Engineer"]}
+            strings={["A FrontEnd Developer.", "Software Engineer."]}
             typeSpeed={70}
             backSpeed={50}
             loop
