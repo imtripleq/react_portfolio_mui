@@ -1,5 +1,12 @@
-import { Avatar, Box, createTheme, Typography } from "@mui/material";
-import { makeStyles, ThemeProvider } from "@mui/styles";
+import {
+  Avatar,
+  Box,
+  CircularProgress,
+  circularProgressClasses,
+  createTheme,
+  Typography,
+} from "@mui/material";
+import { makeStyles, styled, ThemeProvider } from "@mui/styles";
 import React from "react";
 import avatar from "../img/avatar.jpg";
 
@@ -25,15 +32,18 @@ const Aboutme = () => {
     page: {
       height: "100vh",
       width: "100vw",
-      backgroundColor: "#1F2833",
       display: "block",
+      backgroundColor: "#1F2833",
       alignItems: "center",
     },
     top: {
       display: "flex",
       height: "35vh",
+      width: "800px",
+      margin: "auto",
       alignItems: "center",
-      backgroundColor: "white",
+      backgroundColor: "#1F2833",
+      color: "#C5C6C7",
     },
     left: {
       flex: 1,
@@ -49,8 +59,22 @@ const Aboutme = () => {
       display: "flex",
       flexDirection: "column",
     },
-    paragraph: { margin: "10px 0px", width: "600px", display: "flex" },
-    bottom: { height: "65vh", backgroundColor: "blue" },
+    paragraph: {
+      margin: "10px 0px",
+      width: "600px",
+      display: "flex",
+      textAlign: "justify",
+    },
+    bottom: {
+      height: "65vh",
+      width: "50vw",
+      backgroundColor: "white",
+      display: "flex",
+      flexDirection: "column",
+      padding: "10px 10px",
+      margin: "auto",
+    },
+    progress: {},
   });
   const classes = useStyles();
 
@@ -82,7 +106,14 @@ const Aboutme = () => {
           </Box>
         </Box>
         <Box component="div" className={classes.bottom}>
-          Hello bottom
+          <Box component="div" className={classes.progress}>
+            <CircularProgress
+              variant="determinate"
+              value={90}
+              thickness={4.2}
+              size={200}
+            />
+          </Box>
         </Box>
       </Box>
     </ThemeProvider>
