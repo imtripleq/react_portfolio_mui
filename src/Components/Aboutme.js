@@ -2,12 +2,11 @@ import {
   Avatar,
   Box,
   CircularProgress,
-  circularProgressClasses,
   createTheme,
   Grid,
   Typography,
 } from "@mui/material";
-import { makeStyles, styled, ThemeProvider } from "@mui/styles";
+import { makeStyles, ThemeProvider } from "@mui/styles";
 import React from "react";
 import avatar from "../img/avatar.jpg";
 
@@ -21,7 +20,7 @@ const Aboutme = () => {
   const useStyles = makeStyles({
     page: {
       height: "100vh",
-      width: "100vw",
+      width: "100%",
       display: "block",
       backgroundColor: "#1F2833",
       alignItems: "center",
@@ -34,6 +33,7 @@ const Aboutme = () => {
       alignItems: "center",
       backgroundColor: "#1F2833",
       color: "#C5C6C7",
+      flexWrap: "wrap",
     },
     left: {
       flex: 1,
@@ -43,15 +43,14 @@ const Aboutme = () => {
     avatar: {
       margin: "20px 0px",
     },
-    about: { margin: "10px 0px", marginTop: "20px" },
+    about: { margin: "30px 0px" },
     right: {
-      flex: 1,
+      flex: 3,
       display: "flex",
       flexDirection: "column",
     },
     paragraph: {
       margin: "10px 0px",
-      width: "600px",
       display: "flex",
       textAlign: "justify",
     },

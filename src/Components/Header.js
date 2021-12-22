@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import ReactTyped from "react-typed";
@@ -8,6 +8,7 @@ const useStyles = makeStyles({
   avatar: { border: "2px solid #1A1A1D", marginBottom: "20px" },
   frontPage: {
     height: "100vh",
+    width: "100%",
   },
   title: {
     fontSize: "4rem",
@@ -21,7 +22,7 @@ const useStyles = makeStyles({
     top: "50%",
     left: "50%",
     transform: "translate(-50%,-50%)",
-    width: "100vw",
+    width: "95vw",
     // justifyContent: "center",
     textAlign: "center",
     zIndex: 1,
