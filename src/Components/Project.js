@@ -7,7 +7,7 @@ import { products } from "../data";
 const Project = () => {
   const useStyles = makeStyles({
     page: {
-      height: "100vh",
+      height: "100%",
       width: "100%",
       backgroundColor: "#1F2833",
       padding: "50px 100px",
@@ -48,7 +48,7 @@ const Project = () => {
         </Box>
         <Box component="div" className={classes.list}>
           {products.map((item) => (
-            <Product key={item.id} img={item.img} />
+            <Product key={item.id} img={item.img} title={item.title} />
           ))}
         </Box>
       </Box>
