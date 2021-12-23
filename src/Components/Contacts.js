@@ -103,10 +103,8 @@ const Contacts = () => {
           <Box className={classes.right}>
             <Box className={classes.desc}>
               <Typography variant="body1">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Perferendis vero in impedit quae accusantium eum labore aut nam
-                sit dignissimos. Earum amet ut doloribus vero recusandae. Magnam
-                quam cum numquam?
+                You're welcome to use the form below to send me message. I'm
+                happy to have each other contacted.
               </Typography>
               <form
                 ref={formRef}
