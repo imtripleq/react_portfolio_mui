@@ -97,10 +97,20 @@ const Aboutme = () => {
             flexDirection: "column",
           }}
         >
-          <Typography variant="caption" component="div" color="#C5C6C7">
+          <Typography
+            variant="body1"
+            fontFamily="Ropa Sans"
+            component="div"
+            color="#C5C6C7"
+          >
             {props.language}
           </Typography>
-          <Typography variant="h4" component="div" color="#C5C6C7">
+          <Typography
+            variant="h3"
+            fontFamily="Ropa Sans"
+            component="div"
+            color="#C5C6C7"
+          >
             {props.percentage}%
           </Typography>
         </Box>
@@ -122,7 +132,11 @@ const Aboutme = () => {
           </Box>
           <Box component="div" className={classes.right}>
             <Box component="div" className={classes.about}>
-              <Typography variant="h2" fontFamily="Ropa Sans">
+              <Typography
+                variant="h3"
+                fontFamily="Overpass"
+                sx={{ fontWeight: "500" }}
+              >
                 Let Me Introduce Myself
               </Typography>
             </Box>
@@ -131,7 +145,7 @@ const Aboutme = () => {
                 paragraph
                 variant="h6"
                 fontFamily="Gelasio"
-                fontWeight="300"
+                style={{ fontWeight: "50" }}
               >
                 Self-driven Front-End Developer with the ability to learn, adapt
                 and grow in different environments. Highly self-motivated,

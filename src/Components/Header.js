@@ -29,7 +29,6 @@ const useStyles = makeStyles({
   },
   firstSubtitle: {
     color: "#66FCF1",
-    fontSize: "2rem",
   },
 });
 
@@ -37,10 +36,27 @@ const Header = () => {
   const TypeContainer = () => {
     return (
       <Box className={classes.typeContainer}>
-        <h4 className={classes.firstSubtitle}> H e l l o W o r l d.</h4>
-        <h1 className={classes.title}>I'm Dennis Khor.</h1>
+        <Typography
+          fontFamily="VT323"
+          className={classes.firstSubtitle}
+          variant="h3"
+        >
+          Hello World.
+        </Typography>
+
+        <Typography
+          fontFamily="Overpass"
+          variant="h1"
+          sx={{ color: "white", fontWeight: "500" }}
+        >
+          I'm Dennis Khor.
+        </Typography>
         <br />
-        <Typography className={classes.subtitle} variant="h5">
+        <Typography
+          fontFamily="VT323"
+          className={classes.subtitle}
+          variant="h5"
+        >
           <ReactTyped
             strings={["A FrontEnd Developer.", "Software Engineer."]}
             typeSpeed={70}

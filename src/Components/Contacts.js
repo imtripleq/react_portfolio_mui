@@ -23,7 +23,7 @@ const Contacts = () => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      margin: "0px 30px",
+      margin: "0px 20px",
     },
     left: { flex: "1" },
     right: {
@@ -103,7 +103,7 @@ const Contacts = () => {
           </Box>
           <Box className={classes.right}>
             <Box className={classes.desc}>
-              <Typography variant="body1">
+              <Typography fontFamily="Ropa Sans" variant="body1">
                 You're welcome to use the form below to send me message. I'm
                 happy to have each other contacted.
               </Typography>
@@ -136,7 +136,10 @@ const Contacts = () => {
                   placeholder="Message"
                   name="message"
                 />
-                <Button type="submit" style={{ color: "#45A29E" }}>
+                <Button
+                  type="submit"
+                  style={{ color: "#45A29E", fontFamily: "Ropa Sans" }}
+                >
                   Submit
                 </Button>
                 {done && (

@@ -42,24 +42,24 @@ const useStyles = makeStyles(() => ({
 }));
 
 // Menu Listing
-const menuItems = [
-  {
-    listIcon: <Home />,
-    listText: "Home",
-  },
-  {
-    listIcon: <AssignmentInd />,
-    listText: "About Me",
-  },
-  {
-    listIcon: <Apps />,
-    listText: "Portfolio",
-  },
-  {
-    listIcon: <ContactMail />,
-    listText: "Contacts",
-  },
-];
+// const menuItems = [
+//   {
+//     listIcon: <Home />,
+//     listText: "Home",
+//   },
+//   {
+//     listIcon: <AssignmentInd />,
+//     listText: "About Me",
+//   },
+//   {
+//     listIcon: <Apps />,
+//     listText: "Portfolio",
+//   },
+//   {
+//     listIcon: <ContactMail />,
+//     listText: "Contacts",
+//   },
+// ];
 
 // NavBar Starts Here
 const Navbar = () => {
@@ -74,7 +74,7 @@ const Navbar = () => {
 
   const classes = useStyles();
 
-  const scrollTry = document.getElementsByClassName("makeStyles-page-19");
+  // const scrollTry = document.getElementsByClassName("makeStyles-page-19");
 
   const handleClick = (e) => {
     window.scrollTo({

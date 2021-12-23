@@ -35,16 +35,26 @@ const Footer = () => {
       <Box className={classes.container}>
         <Box className={classes.left}>
           <Box className={classes.copyright}>
-            <Typography variant="h6">© Dennis Khor 2021-2021 </Typography>
+            <Typography
+              fontFamily="Gelasio"
+              style={{ fontWeight: 100 }}
+              variant="body1"
+            >
+              © Copyright by Dennis Khor 2021-2022
+            </Typography>
           </Box>
         </Box>
         <Box className={classes.right}>
           <Box className={classes.iconList}>
             <Box className={classes.icon}>
-              <LinkedIn sx={{ width: "40px", height: "40px" }} />
+              <a href="https://www.linkedin.com/in/denniskhor3139/">
+                <LinkedIn sx={{ width: "40px", height: "40px" }} />
+              </a>
             </Box>
             <Box className={classes.icon}>
-              <GitHub sx={{ width: "40px", height: "40px" }} />
+              <a href="https://github.com/imtripleq">
+                <GitHub sx={{ width: "40px", height: "40px" }} />
+              </a>
             </Box>
           </Box>
         </Box>

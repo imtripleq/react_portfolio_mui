@@ -37,9 +37,16 @@ const Project = () => {
     <>
       <Box component="div" className={classes.page}>
         <Box component="div" className={classes.text}>
-          <Typography variant="h3">Portfolio and On-going Projects</Typography>
+          <Typography
+            fontFamily="Overpass"
+            sx={{ fontWeight: "500" }}
+            variant="h3"
+          >
+            Portfolio and On-going Projects
+          </Typography>
           <Typography
             variant="body1"
+            fontFamily="Gelasio"
             style={{ margin: "20px 0px", textAlign: "justify" }}
           >
             Check out some of my projects by using different technologies and
@@ -53,6 +60,7 @@ const Project = () => {
               img={item.img}
               title={item.title}
               link={item.link}
+              skills={item.skills}
             />
           ))}
         </Box>
