@@ -50,7 +50,6 @@ const Product = ({ img, title, link }) => {
   });
 
   const classes = useStyles();
-  console.log(img);
   return (
     <>
       <Box component="div" className={classes.div}>
@@ -66,9 +65,9 @@ const Product = ({ img, title, link }) => {
           <img src={img} alt="dennis project" className={classes.img} />
         </Box>
         <Box component="div" className={classes.buttonContainer}>
-          <a href={link} target="_blank" rel="noreferrer">
-            <Button>Github</Button>
-          </a>
+          <Button className={classes.button} target="_blank" href={link}>
+            Github
+          </Button>
         </Box>
       </Box>
     </>

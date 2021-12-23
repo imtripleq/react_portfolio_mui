@@ -48,7 +48,12 @@ const Project = () => {
         </Box>
         <Box component="div" className={classes.list}>
           {products.map((item) => (
-            <Product key={item.id} img={item.img} title={item.title} />
+            <Product
+              key={item.id}
+              img={item.img}
+              title={item.title}
+              link={item.link}
+            />
           ))}
         </Box>
       </Box>

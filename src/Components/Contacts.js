@@ -23,6 +23,7 @@ const Contacts = () => {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      margin: "0px 30px",
     },
     left: { flex: "1" },
     right: {
