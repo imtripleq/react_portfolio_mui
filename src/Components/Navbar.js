@@ -74,6 +74,16 @@ const Navbar = () => {
 
   const classes = useStyles();
 
+  const scrollTry = document.getElementsByClassName("makeStyles-page-19");
+
+  const handleClick = (e) => {
+    window.scrollTo({
+      top: e,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   // Side Bar
   const sideList = (slider) => (
     <Stack
@@ -89,17 +99,30 @@ const Navbar = () => {
       />
       <Divider />
       <List>
-        {menuItems.map((item, key) => (
-          <ListItem button key={key}>
-            <ListItemIcon style={{ color: "#0B0C10" }}>
-              {item.listIcon}
-            </ListItemIcon>
-            <ListItemText
-              primary={item.listText}
-              className={classes.listItem}
-            ></ListItemText>
-          </ListItem>
-        ))}
+        <ListItem button key="1" onClick={() => handleClick(0)}>
+          <ListItemIcon style={{ color: "#0B0C10" }}>
+            <Home />
+          </ListItemIcon>
+          <ListItemText>Home</ListItemText>
+        </ListItem>
+        <ListItem button key="2" onClick={() => handleClick(1000)}>
+          <ListItemIcon style={{ color: "#0B0C10" }}>
+            <AssignmentInd />
+          </ListItemIcon>
+          <ListItemText>About Me</ListItemText>
+        </ListItem>
+        <ListItem button key="3" onClick={() => handleClick(2100)}>
+          <ListItemIcon style={{ color: "#0B0C10" }}>
+            <Apps />
+          </ListItemIcon>
+          <ListItemText>Portfolio</ListItemText>
+        </ListItem>
+        <ListItem button key="4" onClick={() => handleClick(4400)}>
+          <ListItemIcon style={{ color: "#0B0C10" }}>
+            <ContactMail />
+          </ListItemIcon>
+          <ListItemText>Contact</ListItemText>
+        </ListItem>
       </List>
     </Stack>
   );

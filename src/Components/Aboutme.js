@@ -151,13 +151,13 @@ const Aboutme = () => {
             alignItems="flex - start"
             justifyContent="center"
           >
-            <CircularProgressWithLabel language="JavaScript" percentage={95} />
-            <CircularProgressWithLabel language="React.js" percentage={95} />
+            <CircularProgressWithLabel language="JavaScript" percentage={96} />
+            <CircularProgressWithLabel language="React.js" percentage={96} />
             <CircularProgressWithLabel language="Python" percentage={85} />
-            <CircularProgressWithLabel language="CSS" percentage={90} />
-            <CircularProgressWithLabel language="HTML" percentage={90} />
-            <CircularProgressWithLabel language="Material.ui" percentage={90} />
-            <CircularProgressWithLabel language="Bootstrap" percentage={85} />
+            <CircularProgressWithLabel language="CSS" percentage={92} />
+            <CircularProgressWithLabel language="HTML" percentage={89} />
+            <CircularProgressWithLabel language="Material.ui" percentage={93} />
+            <CircularProgressWithLabel language="Bootstrap" percentage={88} />
           </Grid>
         </Box>
       </Box>

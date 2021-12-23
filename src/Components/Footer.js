@@ -7,15 +7,18 @@ const Footer = () => {
   const useStyles = makeStyles({
     container: {
       height: "10vh",
-      backgroundColor: "blue",
+      backgroundColor: "#1F2833",
       display: "flex",
       justifyContent: "space-between",
+      color: "#C5C6C7",
     },
+
     left: {
       flex: 1,
       display: "flex",
       alignItems: "center",
     },
+    copyright: { margin: "0px 10px" },
     right: {
       flex: 1,
       display: "flex",
@@ -31,7 +34,9 @@ const Footer = () => {
     <div>
       <Box className={classes.container}>
         <Box className={classes.left}>
-          <Typography variant="h6">© Dennis Khor 2021-2021 </Typography>
+          <Box className={classes.copyright}>
+            <Typography variant="h6">© Dennis Khor 2021-2021 </Typography>
+          </Box>
         </Box>
         <Box className={classes.right}>
           <Box className={classes.iconList}>
