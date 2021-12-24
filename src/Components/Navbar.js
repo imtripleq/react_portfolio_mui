@@ -150,9 +150,9 @@ const Navbar = () => {
             <h3>Contact Me</h3>
           </ListItem>
           <a
-            href="Dennis_Resume_24-12-2021.pdf"
-            download
+            href="https://drive.google.com/file/d/1CrSTy7kvPLN_XyZlmqIN9OPWarJD35hK/view?usp=sharing"
             target="_blank"
+            rel="noreferrer"
             style={{ color: "inherit", textDecoration: "none" }}
           >
             <ListItem button>

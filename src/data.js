@@ -15,7 +15,7 @@ export const products = [
   },
   {
     id: 3,
-    img: "https://i.imgur.com/tIHuxrA.png",
+    img: "https://i.imgur.com/FDYJBMS.png",
     title: "Personal Web Portfolio",
     link: "https://github.com/imtripleq/react_portfolio_mui",
     skills: ["React.js", "Material-ui", "MUI-Icons", "EmailJs", "React Typed"],
