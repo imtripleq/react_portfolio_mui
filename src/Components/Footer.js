@@ -1,4 +1,4 @@
-import { GitHub, LinkedIn } from "@mui/icons-material";
+import { GitHub, LinkedIn, MailOutlined } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
@@ -47,12 +47,26 @@ const Footer = () => {
         <Box className={classes.right}>
           <Box className={classes.iconList}>
             <Box className={classes.icon}>
-              <a href="https://www.linkedin.com/in/denniskhor3139/">
+              <a
+                href="https://www.linkedin.com/in/denniskhor3139/"
+                style={{ color: "inherit" }}
+              >
                 <LinkedIn sx={{ width: "40px", height: "40px" }} />
               </a>
             </Box>
             <Box className={classes.icon}>
-              <a href="https://github.com/imtripleq">
+              <a
+                href="mailto:denniskcc@hotmail.com"
+                style={{ color: "inherit" }}
+              >
+                <MailOutlined sx={{ width: "40px", height: "40px" }} />
+              </a>
+            </Box>
+            <Box className={classes.icon}>
+              <a
+                href="https://github.com/imtripleq"
+                style={{ color: "inherit" }}
+              >
                 <GitHub sx={{ width: "40px", height: "40px" }} />
               </a>
             </Box>

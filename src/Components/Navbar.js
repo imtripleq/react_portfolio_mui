@@ -10,7 +10,6 @@ import {
   List,
   ListItem,
   ListItemIcon,
-  ListItemText,
   Drawer,
   Stack,
 } from "@mui/material";
@@ -18,7 +17,11 @@ import {
   Apps,
   AssignmentInd,
   ContactMail,
+  Download,
+  GitHub,
   Home,
+  LinkedIn,
+  MailOutlined,
   MenuOutlined,
 } from "@mui/icons-material";
 import avatar from "../img/avatar.jpg";
@@ -30,15 +33,33 @@ const useStyles = makeStyles(() => ({
     width: 250,
     height: "100vh",
     background: "#45A29E",
+    justifyContent: "space-between",
   },
+  avatarContainer: { height: "20%" },
   avatar: {
     display: "block",
     margin: "20% auto",
     border: "1px solid #0B0C10",
   },
+  divider: {},
+  listcontainer: { height: "60%" },
   listItem: {
     color: "#0B0C10",
   },
+  navBottom: {
+    height: "8%",
+    position: "relative",
+    backgroundColor: "#1F2833",
+  },
+  iconList: {
+    width: "100%",
+    height: "100%",
+    display: "inline-flex",
+    margin: "auto",
+    justifyContent: "left",
+    alignItems: "center",
+  },
+  icon: { margin: "10px 5px", color: "#C5C6C7" },
 }));
 
 // Menu Listing
@@ -91,39 +112,80 @@ const Navbar = () => {
       component="div"
       onClick={toggleDrawer(slider, false)}
     >
-      <Avatar
-        className={classes.avatar}
-        src={avatar}
-        alt="Dennis Khor"
-        sx={{ width: 150, height: 150, boxShadow: 15 }}
-      />
-      <Divider />
-      <List>
-        <ListItem button key="1" onClick={() => handleClick(0)}>
-          <ListItemIcon style={{ color: "#0B0C10" }}>
-            <Home />
-          </ListItemIcon>
-          <ListItemText>Home</ListItemText>
-        </ListItem>
-        <ListItem button key="2" onClick={() => handleClick(1000)}>
-          <ListItemIcon style={{ color: "#0B0C10" }}>
-            <AssignmentInd />
-          </ListItemIcon>
-          <ListItemText>About Me</ListItemText>
-        </ListItem>
-        <ListItem button key="3" onClick={() => handleClick(2100)}>
-          <ListItemIcon style={{ color: "#0B0C10" }}>
-            <Apps />
-          </ListItemIcon>
-          <ListItemText>Portfolio</ListItemText>
-        </ListItem>
-        <ListItem button key="4" onClick={() => handleClick(4400)}>
-          <ListItemIcon style={{ color: "#0B0C10" }}>
-            <ContactMail />
-          </ListItemIcon>
-          <ListItemText>Contact</ListItemText>
-        </ListItem>
-      </List>
+      <Box className={classes.avatarContainer}>
+        <Avatar
+          className={classes.avatar}
+          src={avatar}
+          alt="Dennis Khor"
+          sx={{ width: 150, height: 150, boxShadow: 15 }}
+        />
+      </Box>
+      <Box className={classes.divider}>
+        <Divider />
+      </Box>
+      <Box className={classes.listcontainer}>
+        <List>
+          <ListItem button key="1" onClick={() => handleClick(0)}>
+            <ListItemIcon style={{ color: "#0B0C10" }}>
+              <Home />
+            </ListItemIcon>
+            <h3>Home</h3>
+          </ListItem>
+          <ListItem button key="2" onClick={() => handleClick(1000)}>
+            <ListItemIcon style={{ color: "#0B0C10" }}>
+              <AssignmentInd />
+            </ListItemIcon>
+            <h3>About Me</h3>
+          </ListItem>
+          <ListItem button key="3" onClick={() => handleClick(2100)}>
+            <ListItemIcon style={{ color: "#0B0C10" }}>
+              <Apps />
+            </ListItemIcon>
+            <h3>Portfolio</h3>
+          </ListItem>
+          <ListItem button key="4" onClick={() => handleClick(4400)}>
+            <ListItemIcon style={{ color: "#0B0C10" }}>
+              <ContactMail />
+            </ListItemIcon>
+            <h3>Contact Me</h3>
+          </ListItem>
+          <a
+            href="Dennis_Resume_24-12-2021.pdf"
+            download
+            target="_blank"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            <ListItem button>
+              <ListItemIcon style={{ color: "#0B0C10" }}>
+                <Download />
+              </ListItemIcon>
+              <h3>Download Resume</h3>
+            </ListItem>
+          </a>
+        </List>
+      </Box>
+      <Box className={classes.navBottom}>
+        <Box className={classes.iconList}>
+          <Box className={classes.icon}>
+            <a
+              href="https://www.linkedin.com/in/denniskhor3139/"
+              style={{ color: "inherit" }}
+            >
+              <LinkedIn sx={{ width: "35px", height: "35px" }} />
+            </a>
+          </Box>
+          <Box className={classes.icon}>
+            <a href="mailto:denniskcc@hotmail.com" style={{ color: "inherit" }}>
+              <MailOutlined sx={{ width: "35px", height: "35px" }} />
+            </a>
+          </Box>
+          <Box className={classes.icon}>
+            <a href="https://github.com/imtripleq" style={{ color: "inherit" }}>
+              <GitHub sx={{ width: "35px", height: "35px" }} />
+            </a>
+          </Box>
+        </Box>
+      </Box>
     </Stack>
   );
 

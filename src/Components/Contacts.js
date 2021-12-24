@@ -87,7 +87,13 @@ const Contacts = () => {
         <Box className={classes.bg}></Box>
         <Box className={classes.wrapper}>
           <Box className={classes.left}>
-            <Typography variant="h2">Let's discuss your project</Typography>
+            <Typography
+              fontFamily="Overpass"
+              style={{ fontWeight: 400 }}
+              variant="h2"
+            >
+              Let's discuss your project
+            </Typography>
             <Box className={classes.info}>
               <Box className={classes.infoItem}>
                 <Phone className={classes.icon} />

@@ -132,11 +132,7 @@ const Aboutme = () => {
           </Box>
           <Box component="div" className={classes.right}>
             <Box component="div" className={classes.about}>
-              <Typography
-                variant="h3"
-                fontFamily="Overpass"
-                sx={{ fontWeight: "500" }}
-              >
+              <Typography variant="h3" fontFamily="Overpass">
                 Let Me Introduce Myself
               </Typography>
             </Box>

@@ -70,7 +70,6 @@ const Product = ({ img, title, link, skills }) => {
       borderRadius: "15%",
     },
   });
-  console.log(skills);
   const classes = useStyles();
   return (
     <>
