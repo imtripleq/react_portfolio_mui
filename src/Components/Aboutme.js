@@ -54,6 +54,7 @@ const Aboutme = () => {
   });
   const classes = useStyles();
 
+  // Skills Percentage with Title
   const CircularProgressWithLabel = (props) => {
     return (
       <Box
@@ -85,20 +86,10 @@ const Aboutme = () => {
             flexDirection: "column",
           }}
         >
-          <Typography
-            variant="body1"
-            fontFamily="Ropa Sans"
-            component="div"
-            color="#C5C6C7"
-          >
+          <Typography variant="body1" component="div" color="#C5C6C7">
             {props.language}
           </Typography>
-          <Typography
-            variant="h3"
-            fontFamily="Ropa Sans"
-            component="div"
-            color="#C5C6C7"
-          >
+          <Typography variant="h3" component="div" color="#C5C6C7">
             {props.percentage}%
           </Typography>
         </Box>
@@ -152,6 +143,7 @@ const Aboutme = () => {
               <CircularProgressWithLabel
                 language={item.languages}
                 percentage={item.percentage}
+                key={item.id}
               />
             );
           })}

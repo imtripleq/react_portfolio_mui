@@ -113,7 +113,7 @@ const Contacts = () => {
           </Box>
           <Box className={classes.right}>
             <Box className={classes.desc}>
-              <Typography fontFamily="Ropa Sans" variant="body1">
+              <Typography variant="body1">
                 You're welcome to use the form below to send me message. I'm
                 happy to have each other contacted.
               </Typography>
@@ -146,17 +146,9 @@ const Contacts = () => {
                   placeholder="Message"
                   name="message"
                 />
-                <Button
-                  className={classes.button}
-                  type="submit"
-                  variant="contained"
-                  style={{
-                    fontFamily: "Ropa Sans",
-                  }}
-                >
+                <Button className={classes.button} type="submit" style={{}}>
                   Submit
                 </Button>
-                <Button variant="contained">Try</Button>
 
                 {done && (
                   <Done

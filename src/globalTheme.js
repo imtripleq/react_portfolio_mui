@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material/styles";
 
 const globalTheme = createTheme({
   typography: {
-    fontFamily: "monospace",
+    fontFamily: "Ropa Sans",
   },
   components: {
     // Name of the component

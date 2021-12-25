@@ -47,7 +47,11 @@ const Product = ({ img, title, link, skills }) => {
       display: "flex",
       justifyContent: "center",
     },
-    button: { color: "#66FCF1" },
+    button: {
+      color: "#66FCF1!important",
+      border: "1px solid !important",
+      "&:hover": { backgroundColor: "#45A29E!important" },
+    },
     skills: {
       width: "100%",
       height: "10vh",
@@ -56,6 +60,7 @@ const Product = ({ img, title, link, skills }) => {
       justifyContent: "center",
       alignItems: "center",
     },
+    skill: { fontSize: "10px!important", padding: "2px 3px" },
     item: {
       width: "50px",
       height: "35px",
@@ -73,7 +78,7 @@ const Product = ({ img, title, link, skills }) => {
   const classes = useStyles();
   return (
     <>
-      <Box component="div" className={classes.div}>
+      <Box className={classes.div}>
         <Box>
           <Typography
             fontFamily="Overpass"
@@ -87,35 +92,21 @@ const Product = ({ img, title, link, skills }) => {
           {skills.map((item, id) => {
             return (
               <Box className={classes.item} key={id}>
-                <Typography
-                  fontFamily="Ropa Sans"
-                  sx={{ fontSize: "10px", padding: "2px 3px" }}
-                >
-                  {item}
-                </Typography>
+                <Typography className={classes.skill}>{item}</Typography>
               </Box>
             );
           })}
         </Box>
-        <Box component="div" className={classes.p}>
-          <Box component="div" className={classes.browser}>
-            <Box component="div" className={classes.circle}></Box>
-            <Box component="div" className={classes.circle}></Box>
-            <Box component="div" className={classes.circle}></Box>
+        <Box className={classes.p}>
+          <Box className={classes.browser}>
+            <Box className={classes.circle}></Box>
+            <Box className={classes.circle}></Box>
+            <Box className={classes.circle}></Box>
           </Box>
           <img src={img} alt="dennis project" className={classes.img} />
         </Box>
-        <Box component="div" className={classes.buttonContainer}>
-          <Button
-            className={classes.button}
-            style={{
-              color: "#66FCF1",
-              border: "1px solid",
-              fontFamily: "Ropa Sans",
-            }}
-            target="_blank"
-            href={link}
-          >
+        <Box className={classes.buttonContainer}>
+          <Button className={classes.button} target="_blank" href={link}>
             Github
           </Button>
         </Box>

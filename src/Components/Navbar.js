@@ -35,6 +35,8 @@ const useStyles = makeStyles(() => ({
     background: "#45A29E",
     justifyContent: "space-between",
   },
+  appBar: { background: "#1A1A1D!important", opacity: "0.75" },
+  menu: { color: "white", marginLeft: "10px!important", flexGrow: 1 },
   avatarContainer: { height: "20%" },
   avatar: {
     display: "block",
@@ -42,7 +44,7 @@ const useStyles = makeStyles(() => ({
     border: "1px solid #0B0C10",
   },
   divider: {},
-  listcontainer: { height: "60%" },
+  listcontainer: { height: "60%", color: "#0B0C10" },
   listItem: {
     color: "#0B0C10",
   },
@@ -60,6 +62,7 @@ const useStyles = makeStyles(() => ({
     alignItems: "center",
   },
   icon: { margin: "10px 5px", color: "#C5C6C7" },
+  icon: { color: "#0B0C10!important" },
 }));
 
 // Menu Listing
@@ -126,25 +129,25 @@ const Navbar = () => {
       <Box className={classes.listcontainer}>
         <List>
           <ListItem button key="1" onClick={() => handleClick(0)}>
-            <ListItemIcon style={{ color: "#0B0C10" }}>
+            <ListItemIcon className={classes.icon}>
               <Home />
             </ListItemIcon>
             <h3>Home</h3>
           </ListItem>
           <ListItem button key="2" onClick={() => handleClick(1000)}>
-            <ListItemIcon style={{ color: "#0B0C10" }}>
+            <ListItemIcon className={classes.icon}>
               <AssignmentInd />
             </ListItemIcon>
             <h3>About Me</h3>
           </ListItem>
           <ListItem button key="3" onClick={() => handleClick(2100)}>
-            <ListItemIcon style={{ color: "#0B0C10" }}>
+            <ListItemIcon className={classes.icon}>
               <Apps />
             </ListItemIcon>
             <h3>Portfolio</h3>
           </ListItem>
           <ListItem button key="4" onClick={() => handleClick(4400)}>
-            <ListItemIcon style={{ color: "#0B0C10" }}>
+            <ListItemIcon className={classes.icon}>
               <ContactMail />
             </ListItemIcon>
             <h3>Contact Me</h3>
@@ -156,7 +159,7 @@ const Navbar = () => {
             style={{ color: "inherit", textDecoration: "none" }}
           >
             <ListItem button>
-              <ListItemIcon style={{ color: "#0B0C10" }}>
+              <ListItemIcon className={classes.icon}>
                 <Download />
               </ListItemIcon>
               <h3>Download Resume</h3>
@@ -192,19 +195,11 @@ const Navbar = () => {
   return (
     <>
       <Box component="nav">
-        <AppBar
-          position="fixed"
-          style={{ background: "#1A1A1D", opacity: "0.75" }}
-        >
+        <AppBar className={classes.appBar} position="fixed">
           <Toolbar>
             <IconButton onClick={toggleDrawer("right", true)}>
               <MenuOutlined style={{ color: "#66FCF1" }} />
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{ flexGrow: 1 }}
-                style={{ color: "white", marginLeft: "10px" }}
-              >
+              <Typography className={classes.menu} variant="h6">
                 Menu
               </Typography>
             </IconButton>

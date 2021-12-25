@@ -35,8 +35,8 @@ const Project = () => {
   const classes = useStyles();
   return (
     <>
-      <Box component="div" className={classes.page}>
-        <Box component="div" className={classes.text}>
+      <Box className={classes.page}>
+        <Box className={classes.text}>
           <Typography
             fontFamily="Overpass"
             sx={{ fontWeight: "500" }}
@@ -53,7 +53,7 @@ const Project = () => {
             languages.
           </Typography>
         </Box>
-        <Box component="div" className={classes.list}>
+        <Box className={classes.list}>
           {products.map((item) => (
             <Product
               key={item.id}
