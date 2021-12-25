@@ -5,7 +5,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 
 const Contacts = () => {
-  const useStyles = makeStyles({
+  const useStyles = makeStyles((theme) => ({
     container: {
       height: "90vh",
       backgroundColor: "white",
@@ -57,7 +57,10 @@ const Contacts = () => {
       fontSize: "14px",
       paddingLeft: "10px",
     },
-  });
+    button: {
+      color: "#45A29E!important",
+    },
+  }));
   const classes = useStyles();
   const formRef = useRef();
   const [done, setDone] = useState(false);
@@ -81,6 +84,7 @@ const Contacts = () => {
         }
       );
   };
+
   return (
     <div>
       <Box className={classes.container}>
@@ -143,11 +147,17 @@ const Contacts = () => {
                   name="message"
                 />
                 <Button
+                  className={classes.button}
                   type="submit"
-                  style={{ color: "#45A29E", fontFamily: "Ropa Sans" }}
+                  variant="contained"
+                  style={{
+                    fontFamily: "Ropa Sans",
+                  }}
                 >
                   Submit
                 </Button>
+                <Button variant="contained">Try</Button>
+
                 {done && (
                   <Done
                     color="success"

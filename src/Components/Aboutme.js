@@ -1,22 +1,10 @@
-import {
-  Avatar,
-  Box,
-  CircularProgress,
-  createTheme,
-  Grid,
-  Typography,
-} from "@mui/material";
-import { makeStyles, ThemeProvider } from "@mui/styles";
+import { Avatar, Box, CircularProgress, Grid, Typography } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import React from "react";
 import avatar from "../img/avatar.jpg";
+import { skills } from "../data";
 
 const Aboutme = () => {
-  const theme = createTheme({
-    typography: {
-      fontFamily: ["Ropa Sans", "sans-serif"].join(","),
-    },
-  });
-
   const useStyles = makeStyles({
     page: {
       height: "100vh",
@@ -119,59 +107,57 @@ const Aboutme = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Box component="div" className={classes.page}>
-        <Box component="div" className={classes.top}>
-          <Box component="div" className={classes.left}>
-            <Avatar
-              className={classes.avatar}
-              src={avatar}
-              alt="Dennis Khor"
-              sx={{ width: 100, height: 100, boxShadow: 15 }}
-            />
-          </Box>
-          <Box component="div" className={classes.right}>
-            <Box component="div" className={classes.about}>
-              <Typography variant="h3" fontFamily="Overpass">
-                Let Me Introduce Myself
-              </Typography>
-            </Box>
-            <Box component="div" className={classes.paragraph}>
-              <Typography
-                paragraph
-                variant="h6"
-                fontFamily="Gelasio"
-                style={{ fontWeight: "50" }}
-              >
-                Self-driven Front-End Developer with the ability to learn, adapt
-                and grow in different environments. Highly self-motivated,
-                responsible, with a get-it-done, on-time and high-quality
-                product spirit. A career changer who is ready to adapt and grow
-                in the new environment.
-              </Typography>
-            </Box>
-          </Box>
+    <Box className={classes.page}>
+      <Box className={classes.top}>
+        <Box className={classes.left}>
+          <Avatar
+            className={classes.avatar}
+            src={avatar}
+            alt="Dennis Khor"
+            sx={{ width: 100, height: 100, boxShadow: 15 }}
+          />
         </Box>
-        <Box component="div" className={classes.bottom}>
-          <Grid
-            component="div"
-            className={classes.progress}
-            container
-            rowSpacing={2}
-            alignItems="flex - start"
-            justifyContent="center"
-          >
-            <CircularProgressWithLabel language="JavaScript" percentage={96} />
-            <CircularProgressWithLabel language="React.js" percentage={96} />
-            <CircularProgressWithLabel language="Python" percentage={85} />
-            <CircularProgressWithLabel language="CSS" percentage={92} />
-            <CircularProgressWithLabel language="HTML" percentage={89} />
-            <CircularProgressWithLabel language="Material.ui" percentage={93} />
-            <CircularProgressWithLabel language="Bootstrap" percentage={88} />
-          </Grid>
+        <Box className={classes.right}>
+          <Box className={classes.about}>
+            <Typography variant="h3" fontFamily="Overpass">
+              Let Me Introduce Myself
+            </Typography>
+          </Box>
+          <Box className={classes.paragraph}>
+            <Typography
+              paragraph
+              variant="h6"
+              fontFamily="Gelasio"
+              style={{ fontWeight: "50" }}
+            >
+              Self-driven Front-End Developer with the ability to learn, adapt
+              and grow in different environments. Highly self-motivated,
+              responsible, with a get-it-done, on-time and high-quality product
+              spirit. A career changer who is ready to adapt and grow in the new
+              environment.
+            </Typography>
+          </Box>
         </Box>
       </Box>
-    </ThemeProvider>
+      <Box className={classes.bottom}>
+        <Grid
+          className={classes.progress}
+          container
+          rowSpacing={2}
+          alignItems="flex - start"
+          justifyContent="center"
+        >
+          {skills.map((item) => {
+            return (
+              <CircularProgressWithLabel
+                language={item.languages}
+                percentage={item.percentage}
+              />
+            );
+          })}
+        </Grid>
+      </Box>
+    </Box>
   );
 };
 

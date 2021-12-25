@@ -21,3 +21,41 @@ export const products = [
     skills: ["React.js", "Material-ui", "MUI-Icons", "EmailJs", "React Typed"],
   },
 ];
+
+export const skills = [
+  {
+    id: 1,
+    languages: "Javascript",
+    percentage: 95,
+  },
+  {
+    id: 2,
+    languages: "React.js",
+    percentage: 95,
+  },
+  {
+    id: 3,
+    languages: "Python",
+    percentage: 85,
+  },
+  {
+    id: 4,
+    languages: "CSS",
+    percentage: 90,
+  },
+  {
+    id: 5,
+    languages: "HTML",
+    percentage: 90,
+  },
+  {
+    id: 6,
+    languages: "Material.ui",
+    percentage: 95,
+  },
+  {
+    id: 7,
+    languages: "Bootstrap",
+    percentage: 85,
+  },
+];

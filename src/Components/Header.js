@@ -4,7 +4,7 @@ import React from "react";
 import ReactTyped from "react-typed";
 
 // CSS Styles
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   avatar: { border: "2px solid #1A1A1D", marginBottom: "20px" },
   frontPage: {
     height: "100vh",
@@ -29,18 +29,15 @@ const useStyles = makeStyles({
   },
   firstSubtitle: {
     color: "#66FCF1",
+    fontFamily: "VT323!important",
   },
-});
+}));
 
 const Header = () => {
   const TypeContainer = () => {
     return (
       <Box className={classes.typeContainer}>
-        <Typography
-          fontFamily="VT323"
-          className={classes.firstSubtitle}
-          variant="h3"
-        >
+        <Typography className={classes.firstSubtitle} variant="h3">
           Hello World.
         </Typography>
 

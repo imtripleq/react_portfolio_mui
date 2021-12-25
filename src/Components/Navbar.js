@@ -150,7 +150,7 @@ const Navbar = () => {
             <h3>Contact Me</h3>
           </ListItem>
           <a
-            href="https://drive.google.com/file/d/1CrSTy7kvPLN_XyZlmqIN9OPWarJD35hK/view?usp=sharing"
+            href="https://drive.google.com/file/d/1TVnfM3yYEiU0hqUIl8U2-8wsPT5gMCra/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             style={{ color: "inherit", textDecoration: "none" }}
