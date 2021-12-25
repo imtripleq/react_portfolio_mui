@@ -16,7 +16,7 @@ const Aboutme = () => {
     top: {
       display: "flex",
       height: "35vh",
-      width: "800px",
+      width: "70%",
       margin: "auto",
       alignItems: "center",
       backgroundColor: "#1F2833",
@@ -43,14 +43,26 @@ const Aboutme = () => {
       textAlign: "justify",
     },
     bottom: {
-      height: "65vh",
-      width: "600px",
+      height: "50vh",
+      width: "100%",
       display: "flex",
       flexDirection: "column",
-      padding: "10px 10px",
+      padding: "0px 10px",
       margin: "auto",
+      alignItems: "center",
+      justifyContent: "center",
+      position: "relative",
     },
-    progress: {},
+    progress: {
+      position: "relative",
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    circle: { float: "left" },
   });
   const classes = useStyles();
 
@@ -60,8 +72,8 @@ const Aboutme = () => {
       <Box
         sx={{
           position: "relative",
-          display: "inline-flex",
-          margin: "10px 40px",
+          display: "flex",
+          margin: "5px 40px",
           justifyContent: "center",
           alignItems: "center",
         }}
@@ -140,11 +152,13 @@ const Aboutme = () => {
         >
           {skills.map((item) => {
             return (
-              <CircularProgressWithLabel
-                language={item.languages}
-                percentage={item.percentage}
-                key={item.id}
-              />
+              <Box className={classes.circle}>
+                <CircularProgressWithLabel
+                  language={item.languages}
+                  percentage={item.percentage}
+                  key={item.id}
+                />
+              </Box>
             );
           })}
         </Grid>
