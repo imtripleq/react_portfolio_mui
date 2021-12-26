@@ -84,7 +84,7 @@ const Aboutme = () => {
       margin: "5px 40px",
       justifyContent: "center",
       alignItems: "center",
-      [theme.breakpoints.between("xs", "md")]: {
+      [theme.breakpoints.between("xs", "sm")]: {
         display: "none",
       },
     },
@@ -94,7 +94,7 @@ const Aboutme = () => {
       margin: "5px 40px",
       justifyContent: "center",
       alignItems: "center",
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up("sm")]: {
         display: "none",
       },
     },
