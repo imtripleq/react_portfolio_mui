@@ -209,11 +209,10 @@ const Aboutme = () => {
         >
           {skills.map((item) => {
             return (
-              <Box className={classes.circle}>
+              <Box className={classes.circle} key={item.id}>
                 <CircularProgressWithLabel
                   language={item.languages}
                   percentage={item.percentage}
-                  key={item.id}
                 />
               </Box>
             );

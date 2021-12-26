@@ -5,4 +5,12 @@ body {
   -moz-background: cover;
   -o-background: cover;
   background: cover;
+
+  @media screen and (max-width: 50em) {
+    .site-header {
+      background: url(https://myeternaltrails.com/wp- 
+        content/uploads/2018/11/Harishchandragarh_Header.jpg)
+        50% top !important;
+    }
+  }
 }
