@@ -40,14 +40,14 @@ const useStyles = makeStyles((theme) => ({
   menu: { color: "white", marginLeft: "10px!important", flexGrow: 1 },
   avatarContainer: {
     flex: 1,
-    margin: "20px 0px",
+    margin: "5% 0%",
     maxWidth: "300px",
     maxHeight: "200px",
   },
   avatar: {
     height: "100%",
     width: "100%",
-    margin: "20% auto",
+    margin: "10% auto",
     border: "1px solid #0B0C10",
     [theme.breakpoints.between("xs", "md")]: {
       margin: "10% auto",
@@ -167,7 +167,7 @@ const Navbar = () => {
             <h3>Contact Me</h3>
           </ListItem>
           <a
-            href="https://drive.google.com/file/d/1TVnfM3yYEiU0hqUIl8U2-8wsPT5gMCra/view?usp=sharing"
+            href="https://drive.google.com/file/d/1UmdyNmiuORBQC1V434KTtuLpLfOw1rAQ/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             style={{ color: "inherit", textDecoration: "none" }}
