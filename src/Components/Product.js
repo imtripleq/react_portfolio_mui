@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 import React from "react";
 
 const Product = ({ img, title, link, skills }) => {
-  const useStyles = makeStyles({
+  const useStyles = makeStyles((theme) => ({
     div: {
       width: "40%",
       height: "60vh",
@@ -13,6 +13,10 @@ const Product = ({ img, title, link, skills }) => {
       flexDirection: "column",
       alignItems: "center",
       color: "#C5C6C7",
+      [theme.breakpoints.between("xs", "md")]: {
+        width: "90%",
+        margin: "5px 0px",
+      },
     },
     p: {
       width: "100%",
@@ -74,7 +78,7 @@ const Product = ({ img, title, link, skills }) => {
       color: "#66FCF1",
       borderRadius: "15%",
     },
-  });
+  }));
   const classes = useStyles();
   return (
     <>

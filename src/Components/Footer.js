@@ -4,7 +4,7 @@ import { makeStyles } from "@mui/styles";
 import React from "react";
 
 const Footer = () => {
-  const useStyles = makeStyles({
+  const useStyles = makeStyles((theme) => ({
     container: {
       height: "10vh",
       backgroundColor: "#1F2833",
@@ -18,7 +18,12 @@ const Footer = () => {
       display: "flex",
       alignItems: "center",
     },
-    copyright: { margin: "0px 10px" },
+    copyright: {
+      margin: "0px 10px",
+      [theme.breakpoints.between("xs", "md")]: {
+        margin: "0px 5px",
+      },
+    },
     right: {
       flex: 1,
       display: "flex",
@@ -26,8 +31,14 @@ const Footer = () => {
       justifyContent: "center",
     },
     iconList: { display: "flex" },
-    icon: { margin: "0px 10px", cursor: "pointer" },
-  });
+    icon: {
+      margin: "0px 10px",
+      cursor: "pointer",
+      [theme.breakpoints.between("xs", "md")]: {
+        margin: "0px 5px",
+      },
+    },
+  }));
   const classes = useStyles();
 
   return (
@@ -38,7 +49,8 @@ const Footer = () => {
             <Typography
               fontFamily="Gelasio"
               style={{ fontWeight: 100 }}
-              variant="body1"
+              variant="body2"
+              className={classes.copyrightFont}
             >
               © Copyright by Dennis Khor 2021-2022
             </Typography>

@@ -1,6 +1,6 @@
 import { Done, Email, LocationOn, Phone } from "@mui/icons-material";
 import { Box, Button, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { makeStyles, useTheme } from "@mui/styles";
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 
@@ -10,6 +10,9 @@ const Contacts = () => {
       height: "90vh",
       backgroundColor: "white",
       position: "relative",
+      [theme.breakpoints.between("xs", "md")]: {
+        height: "100%",
+      },
     },
     bg: {
       width: "20px",
@@ -24,20 +27,38 @@ const Contacts = () => {
       justifyContent: "center",
       alignItems: "center",
       margin: "0px 20px",
+      [theme.breakpoints.between("xs", "md")]: {
+        flexDirection: "column",
+        height: "100%",
+      },
     },
-    left: { flex: "1" },
+    left: {
+      flex: "1",
+    },
+    title: {
+      [theme.breakpoints.between("xs", "md")]: {
+        padding: "10px 0px",
+      },
+    },
     right: {
       flex: "1",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
     },
-    info: {},
+    info: {
+      [theme.breakpoints.between("xs", "md")]: {
+        margin: "20px 0px",
+      },
+    },
     infoItem: {
       display: "flex",
       alignItems: "center",
       margin: "50px 0px",
       width: "70%",
+      [theme.breakpoints.between("xs", "md")]: {
+        margin: "5px 0px",
+      },
     },
     icon: { marginRight: "20px" },
     desc: {},
@@ -59,6 +80,7 @@ const Contacts = () => {
     },
     button: {
       color: "#45A29E!important",
+      // "@media (max-width: 480px)": { background: "red!important" },
     },
   }));
   const classes = useStyles();
@@ -92,6 +114,7 @@ const Contacts = () => {
         <Box className={classes.wrapper}>
           <Box className={classes.left}>
             <Typography
+              className={classes.title}
               fontFamily="Overpass"
               style={{ fontWeight: 400 }}
               variant="h2"

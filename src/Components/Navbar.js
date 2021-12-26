@@ -28,23 +28,33 @@ import avatar from "../img/avatar.jpg";
 import { makeStyles } from "@mui/styles";
 
 // CSS Styles
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   menuSliderContainer: {
     width: 250,
     height: "100vh",
     background: "#45A29E",
     justifyContent: "space-between",
+    display: "flex",
   },
   appBar: { background: "#1A1A1D!important", opacity: "0.75" },
   menu: { color: "white", marginLeft: "10px!important", flexGrow: 1 },
-  avatarContainer: { height: "20%" },
+  avatarContainer: {
+    flex: 1,
+    margin: "20px 0px",
+    maxWidth: "300px",
+    maxHeight: "200px",
+  },
   avatar: {
-    display: "block",
+    height: "100%",
+    width: "100%",
     margin: "20% auto",
     border: "1px solid #0B0C10",
+    [theme.breakpoints.between("xs", "md")]: {
+      margin: "10% auto",
+    },
   },
   divider: {},
-  listcontainer: { height: "60%", color: "#0B0C10" },
+  listcontainer: { height: "60%", color: "#0B0C10", flex: 3 },
   listItem: {
     color: "#0B0C10",
   },
@@ -58,11 +68,15 @@ const useStyles = makeStyles(() => ({
     height: "100%",
     display: "inline-flex",
     margin: "auto",
-    justifyContent: "left",
+    justifyContent: "center",
     alignItems: "center",
+    color: "#C5C6C7!important",
   },
-  icon: { margin: "10px 5px", color: "#C5C6C7" },
-  icon: { color: "#0B0C10!important" },
+  icon: {
+    color: "#0B0C10!important",
+    [theme.breakpoints.between("xs", "md")]: {},
+  },
+  bottomIcon: { margin: "0px 10px" },
 }));
 
 // Menu Listing
@@ -120,7 +134,7 @@ const Navbar = () => {
           className={classes.avatar}
           src={avatar}
           alt="Dennis Khor"
-          sx={{ width: 150, height: 150, boxShadow: 15 }}
+          sx={{ width: "60%", height: "90%", boxShadow: 15 }}
         />
       </Box>
       <Box className={classes.divider}>
@@ -169,7 +183,7 @@ const Navbar = () => {
       </Box>
       <Box className={classes.navBottom}>
         <Box className={classes.iconList}>
-          <Box className={classes.icon}>
+          <Box className={classes.bottomIcon}>
             <a
               href="https://www.linkedin.com/in/denniskhor3139/"
               style={{ color: "inherit" }}
@@ -177,12 +191,12 @@ const Navbar = () => {
               <LinkedIn sx={{ width: "35px", height: "35px" }} />
             </a>
           </Box>
-          <Box className={classes.icon}>
+          <Box className={classes.bottomIcon}>
             <a href="mailto:denniskcc@hotmail.com" style={{ color: "inherit" }}>
               <MailOutlined sx={{ width: "35px", height: "35px" }} />
             </a>
           </Box>
-          <Box className={classes.icon}>
+          <Box className={classes.bottomIcon}>
             <a href="https://github.com/imtripleq" style={{ color: "inherit" }}>
               <GitHub sx={{ width: "35px", height: "35px" }} />
             </a>

@@ -48,12 +48,8 @@ const Header = () => {
         >
           I'm Dennis Khor.
         </Typography>
-        <br />
-        <Typography
-          fontFamily="VT323"
-          className={classes.subtitle}
-          variant="h5"
-        >
+
+        <Typography className={classes.subtitle} variant="h5">
           <ReactTyped
             strings={["A FrontEnd Developer.", "Software Engineer."]}
             typeSpeed={70}

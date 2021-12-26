@@ -5,7 +5,7 @@ import Product from "./Product";
 import { products } from "../data";
 
 const Project = () => {
-  const useStyles = makeStyles({
+  const useStyles = makeStyles((theme) => ({
     page: {
       height: "100%",
       width: "100%",
@@ -15,8 +15,12 @@ const Project = () => {
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
+      [theme.breakpoints.between("xs", "md")]: {
+        padding: "20px 10px",
+      },
     },
     text: {
+      height: "100%",
       width: "85%",
       margin: "50px 0px",
       color: "#C5C6C7",
@@ -30,7 +34,7 @@ const Project = () => {
       justifyContent: "center",
       width: "100%",
     },
-  });
+  }));
 
   const classes = useStyles();
   return (
