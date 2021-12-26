@@ -1,6 +1,6 @@
 import { Done, Email, LocationOn, Phone } from "@mui/icons-material";
 import { Box, Button, Typography } from "@mui/material";
-import { makeStyles, useTheme } from "@mui/styles";
+import { makeStyles } from "@mui/styles";
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 
