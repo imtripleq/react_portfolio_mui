@@ -1,5 +1,5 @@
 /* body {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.459)),
     url(./img/background-resize.jpg) no-repeat center center fixed;
   -webkit-background: cover;
   -moz-background: cover;
@@ -9,12 +9,12 @@
 
 body:after {
   content: "";
-  position: fixed; /* stretch a fixed position to the whole screen */
+  position: fixed;
   top: 0;
-  height: 100vh; /* fix for mobile browser address bar appearing disappearing */
+  height: 100vh;
   left: 0;
   right: 0;
-  z-index: -1; /* needed to keep in the background */
+  /* z-index: -1; */
   background: linear-gradient(rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.459)),
     url(./img/background-resize.jpg) center center;
   -webkit-background-size: cover;
