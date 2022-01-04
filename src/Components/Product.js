@@ -13,6 +13,7 @@ const Product = ({ img, title, link, skills }) => {
       flexDirection: "column",
       alignItems: "center",
       color: "#C5C6C7",
+
       [theme.breakpoints.between("xs", "md")]: {
         width: "90%",
         margin: "5px 0px",
@@ -20,11 +21,15 @@ const Product = ({ img, title, link, skills }) => {
     },
     p: {
       width: "100%",
-      height: "50vh",
+      height: "30vh",
       margin: "20px 30px",
       border: "2px solid rgb(243,242,242)",
       borderRadius: "10px 10px 0px 0px",
       overflow: "hidden",
+      [theme.breakpoints.between("xs", "md")]: {
+        width: "100%",
+        maxWidth: "400px",
+      },
     },
     browser: {
       height: "20px",

@@ -33,6 +33,7 @@ const Project = () => {
       flexWrap: "wrap",
       justifyContent: "center",
       width: "100%",
+      maxWidth: "800px",
     },
   }));
 

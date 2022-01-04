@@ -24,7 +24,7 @@ export const products = [
     id: 4,
     img: "https://i.imgur.com/wGbyfyF.png",
     title: "Food Picker",
-    link: "",
+    link: "https://github.com/imtripleq/react_project2",
     skills: ["React.js", "Material-ui", "MUI-Icons", "EmailJs", "Api"],
   },
 ];
