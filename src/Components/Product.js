@@ -21,7 +21,8 @@ const Product = ({ img, title, link, skills }) => {
     },
     p: {
       width: "100%",
-      height: "30vh",
+      height: "28vh",
+      maxHeight: "300px",
       margin: "20px 30px",
       border: "2px solid rgb(243,242,242)",
       borderRadius: "10px 10px 0px 0px",
