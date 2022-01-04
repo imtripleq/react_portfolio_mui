@@ -20,6 +20,13 @@ export const products = [
     link: "https://github.com/imtripleq/react_portfolio_mui",
     skills: ["React.js", "Material-ui", "MUI-Icons", "EmailJs", "React Typed"],
   },
+  {
+    id: 4,
+    img: "https://i.imgur.com/wGbyfyF.png",
+    title: "Food Picker",
+    link: "",
+    skills: ["React.js", "Material-ui", "MUI-Icons", "EmailJs", "Api"],
+  },
 ];
 
 export const skills = [

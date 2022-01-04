@@ -1,7 +1,7 @@
 # Dennis Khor portfolio
 
-## This is a on-going project
+## Thanks for coming in.
 
-dated 23/12/2021
+This is my first web portfolio.
 
-I'm currently still working on this project.
+This website was built using React.js , Material-Ui , Email-js.
