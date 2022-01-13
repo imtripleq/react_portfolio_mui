@@ -68,6 +68,13 @@ const Aboutme = () => {
       alignItems: "center",
       justifyContent: "center",
     },
+    skillsTitle: {
+      color: "#C5C6C7",
+      display: "flex",
+      marginBottom: "30px",
+      justifyContent: "center",
+      alignItems: "center",
+    },
     progress: {
       position: "relative",
       width: "100%",
@@ -199,6 +206,11 @@ const Aboutme = () => {
         </Box>
       </Box>
       <Box className={classes.bottom}>
+        <Box className={classes.skillsTitle}>
+          <Typography variant="h3" fontFamily="Overpass">
+            Skills
+          </Typography>
+        </Box>
         <Grid
           className={classes.progress}
           container
