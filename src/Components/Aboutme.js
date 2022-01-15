@@ -91,6 +91,12 @@ const Aboutme = () => {
       margin: "5px 40px",
       justifyContent: "center",
       alignItems: "center",
+      borderRadius: "50%",
+      transition: "0.6s ease, transform 0.3s",
+      "&:hover": {
+        background: "#45A29E",
+        transform: "rotate(360deg)",
+      },
       [theme.breakpoints.between("xs", "sm")]: {
         display: "none",
       },
@@ -101,6 +107,7 @@ const Aboutme = () => {
       margin: "5px 40px",
       justifyContent: "center",
       alignItems: "center",
+
       [theme.breakpoints.up("sm")]: {
         display: "none",
       },
@@ -117,8 +124,12 @@ const Aboutme = () => {
       justifyContent: "center",
       flexDirection: "column",
       color: "#C5C6C7",
+      transition: "0.6 ease",
+      "&:hover": { color: "#0B0C10" },
     },
-    circularFont: { fontSize: "15px!important" },
+    circularFont: {
+      fontSize: "15px!important",
+    },
   }));
   const classes = useStyles();
 

@@ -70,7 +70,12 @@ const Product = ({ img, title, link, skills }) => {
       justifyContent: "center",
       alignItems: "center",
     },
-    skill: { fontSize: "10px!important", padding: "2px 3px" },
+    skill: {
+      fontSize: "10px!important",
+      padding: "2px 3px",
+      transition: "ease-out 0.3s",
+      "&:hover": { fontSize: "15px!important" },
+    },
     item: {
       width: "50px",
       height: "35px",
@@ -83,6 +88,14 @@ const Product = ({ img, title, link, skills }) => {
       backgroundColor: "#0B0C10",
       color: "#66FCF1",
       borderRadius: "15%",
+      transition: "ease-in 0.1s",
+      cursor: "default",
+      "&:hover": {
+        width: "70px",
+        height: "60px",
+        background: "#45A29E",
+        transform: "translateY(-6px)",
+      },
     },
   }));
   const classes = useStyles();
