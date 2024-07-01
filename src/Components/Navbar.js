@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -24,8 +24,10 @@ import {
   MailOutlined,
   MenuOutlined,
 } from "@mui/icons-material";
+import { Link as ScrollLink } from "react-scroll";
 import avatar from "../img/avatar.jpg";
 import { makeStyles } from "@mui/styles";
+import axios from "axios";
 
 // CSS Styles
 const useStyles = makeStyles((theme) => ({
@@ -104,25 +106,30 @@ const Navbar = () => {
   const [state, setState] = useState({
     right: false,
   });
+  const [resumeLink, setResumeLink] = useState("");
 
-  //Toggle button
+  useEffect(() => {
+    const fetchResumeLink = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.github.com/gists/52bec37fc451749f69a76daa4c1235b5"
+        );
+        const resumeUrl = response.data.files["gistfile1.txt"].content;
+        setResumeLink(resumeUrl);
+      } catch (error) {
+        console.error("Error fetching the resume link: ", error);
+      }
+    };
+    fetchResumeLink();
+  }, []);
+
+    //Toggle button
   const toggleDrawer = (slider, open) => () => {
     setState({ ...state, [slider]: open });
   };
 
   const classes = useStyles();
 
-  // const scrollTry = document.getElementsByClassName("makeStyles-page-19");
-
-  const handleClick = (e) => {
-    window.scrollTo({
-      top: e,
-      left: 0,
-      behavior: "smooth",
-    });
-  };
-
-  // Side Bar
   const sideList = (slider) => (
     <Stack
       className={classes.menuSliderContainer}
@@ -142,32 +149,40 @@ const Navbar = () => {
       </Box>
       <Box className={classes.listcontainer}>
         <List>
-          <ListItem button key="1" onClick={() => handleClick(0)}>
+          <ListItem button key="1">
             <ListItemIcon className={classes.icon}>
               <Home />
             </ListItemIcon>
-            <h3>Home</h3>
+            <ScrollLink to="home" smooth={true} duration={500}>
+              <h3>Home</h3>
+            </ScrollLink>
           </ListItem>
-          <ListItem button key="2" onClick={() => handleClick(1000)}>
+          <ListItem button key="2">
             <ListItemIcon className={classes.icon}>
               <AssignmentInd />
             </ListItemIcon>
-            <h3>About Me</h3>
+            <ScrollLink to="about" smooth={true} duration={500}>
+              <h3>About Me</h3>
+            </ScrollLink>
           </ListItem>
-          <ListItem button key="3" onClick={() => handleClick(2100)}>
+          <ListItem button key="3">
             <ListItemIcon className={classes.icon}>
               <Apps />
             </ListItemIcon>
-            <h3>Portfolio</h3>
+            <ScrollLink to="portfolio" smooth={true} duration={500}>
+              <h3>Portfolio</h3>
+            </ScrollLink>
           </ListItem>
-          <ListItem button key="4" onClick={() => handleClick(4400)}>
+          <ListItem button key="4">
             <ListItemIcon className={classes.icon}>
               <ContactMail />
             </ListItemIcon>
-            <h3>Contact Me</h3>
+            <ScrollLink to="contact" smooth={true} duration={500}>
+              <h3>Contact Me</h3>
+            </ScrollLink>
           </ListItem>
           <a
-            href="https://drive.google.com/file/d/1UmdyNmiuORBQC1V434KTtuLpLfOw1rAQ/view?usp=sharing"
+            href={resumeLink}
             target="_blank"
             rel="noreferrer"
             style={{ color: "inherit", textDecoration: "none" }}

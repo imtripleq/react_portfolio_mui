@@ -40,7 +40,7 @@ const Project = () => {
   const classes = useStyles();
   return (
     <>
-      <Box className={classes.page}>
+      <Box className={classes.page} id="portfolio">
         <Box className={classes.text}>
           <Typography
             fontFamily="Overpass"

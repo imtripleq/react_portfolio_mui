@@ -109,7 +109,7 @@ const Contacts = () => {
 
   return (
     <div>
-      <Box className={classes.container}>
+      <Box className={classes.container} id="contact">
         <Box className={classes.bg}></Box>
         <Box className={classes.wrapper}>
           <Box className={classes.left}>

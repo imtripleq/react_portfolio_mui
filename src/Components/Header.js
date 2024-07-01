@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
   const TypeContainer = () => {
     return (
-      <Box className={classes.typeContainer}>
+      <Box className={classes.typeContainer} >
         <Typography className={classes.firstSubtitle} variant="h3">
           Hello World.
         </Typography>
@@ -62,7 +62,7 @@ const Header = () => {
   };
   const classes = useStyles();
   return (
-    <Box component="div" className={classes.frontPage}>
+    <Box component="div" className={classes.frontPage} id="home">
       <TypeContainer />
     </Box>
   );

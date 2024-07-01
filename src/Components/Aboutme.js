@@ -136,7 +136,7 @@ const Aboutme = () => {
   // Skills Percentage with Title
   const CircularProgressWithLabel = (props) => {
     return (
-      <Box>
+      <Box >
         <Box className={classes.circularBox}>
           <CircularProgress
             className={classes.circular}
@@ -184,7 +184,7 @@ const Aboutme = () => {
   };
 
   return (
-    <Box className={classes.page}>
+    <Box className={classes.page} id="about">
       <Box className={classes.top}>
         <Box className={classes.left}>
           <Avatar
