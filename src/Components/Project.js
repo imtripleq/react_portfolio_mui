@@ -47,15 +47,23 @@ const Project = () => {
             sx={{ fontWeight: "500" }}
             variant="h3"
           >
-            Portfolio and On-going Projects
+            Past Portfolio
           </Typography>
           <Typography
             variant="body1"
             fontFamily="Gelasio"
             style={{ margin: "20px 0px", textAlign: "justify" }}
           >
-            Check out some of my projects by using different technologies and
-            languages.
+            This is a retrospective view of my projects from 3 years ago.
+          </Typography>
+          <Typography
+            variant="body1"
+            fontFamily="Gelasio"
+            style={{ margin: "20px 0px", textAlign: "justify" }}
+          >
+             My
+            skills have improved significantly since then. Please explore to see
+            my growth!
           </Typography>
         </Box>
         <Box className={classes.list}>

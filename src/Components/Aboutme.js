@@ -1,8 +1,30 @@
-import { Avatar, Box, CircularProgress, Grid, Typography } from "@mui/material";
+import { Avatar, Box, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import avatar from "../img/avatar.jpg";
 import { skills } from "../data";
+import {
+  SiReact,
+  SiVuedotjs,
+  SiJavascript,
+  SiTypescript,
+  SiNodedotjs,
+  SiNuxtdotjs,
+  SiContentful,
+  SiJest,
+  SiCypress,
+  SiGit,
+  SiHtml5,
+  SiCss3,
+  SiSass,
+  SiAzuredevops,
+  SiKubernetes,
+  SiPostman,
+  SiPython,
+  SiRuby,
+  SiMicrosoftazure,
+  SiAmazonaws,
+} from "react-icons/si";
 
 const Aboutme = () => {
   const useStyles = makeStyles((theme) => ({
@@ -75,112 +97,64 @@ const Aboutme = () => {
       justifyContent: "center",
       alignItems: "center",
     },
-    progress: {
-      position: "relative",
-      width: "100%",
-      height: "100%",
+    grid: {
       display: "flex",
       flexWrap: "wrap",
       justifyContent: "center",
       alignItems: "center",
+      gap: "20px",
     },
-    circle: {},
-    circularBox: {
-      position: "relative",
+    skillCard: {
       display: "flex",
-      margin: "5px 40px",
-      justifyContent: "center",
-      alignItems: "center",
-      borderRadius: "50%",
-      transition: "0.6s ease, transform 0.3s",
-      "&:hover": {
-        background: "#45A29E",
-        transform: "rotate(360deg)",
-      },
-      [theme.breakpoints.between("xs", "sm")]: {
-        display: "none",
-      },
-    },
-    circularBoxSm: {
-      position: "relative",
-      display: "flex",
-      margin: "5px 40px",
-      justifyContent: "center",
-      alignItems: "center",
-
-      [theme.breakpoints.up("sm")]: {
-        display: "none",
-      },
-    },
-    circular: { color: "#45A29E!important" },
-    circularTextBox: {
-      top: 0,
-      left: 0,
-      bottom: 0,
-      right: 0,
-      position: "absolute",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
       flexDirection: "column",
-      color: "#C5C6C7",
-      transition: "0.6 ease",
-      "&:hover": { color: "#0B0C10" },
+      alignItems: "center",
+      justifyContent: "center",
+      width: "120px",
+      height: "120px",
+      backgroundColor: "#0B0C10",
+      borderRadius: "10px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+      transition: "transform 0.3s ease",
+      "&:hover": {
+        transform: "scale(1.1)",
+      },
     },
-    circularFont: {
-      fontSize: "15px!important",
+    skillIcon: {
+      fontSize: "3rem",
+      color: "#45A29E",
+      marginBottom: "10px",
+    },
+    skillName: {
+      color: "#C5C6C7",
+      fontSize: "1rem",
     },
   }));
   const classes = useStyles();
 
-  // Skills Percentage with Title
-  const CircularProgressWithLabel = (props) => {
-    return (
-      <Box >
-        <Box className={classes.circularBox}>
-          <CircularProgress
-            className={classes.circular}
-            variant="determinate"
-            value={props.percentage}
-            thickness={4.2}
-            size={150}
-          />
-          <Box className={classes.circularTextBox}>
-            <Typography variant="body1" component="div">
-              {props.language}
-            </Typography>
-            <Typography variant="h3" component="div">
-              {props.percentage}%
-            </Typography>
-          </Box>
-        </Box>
-        <Box className={classes.circularBoxSm}>
-          <CircularProgress
-            className={classes.circular}
-            variant="determinate"
-            value={props.percentage}
-            thickness={4.2}
-            size={90}
-          />
-          <Box className={classes.circularTextBox}>
-            <Typography
-              className={classes.circularFont}
-              variant="body1"
-              component="div"
-            >
-              {props.language}
-            </Typography>
-            <Typography
-              className={classes.circularFont}
-              variant="h3"
-              component="div"
-            >
-              {props.percentage}%
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
-    );
+  const getSkillIcon = (icon) => {
+    const icons = {
+      react: <SiReact className={classes.skillIcon} />,
+      vuejs: <SiVuedotjs className={classes.skillIcon} />,
+      javascript: <SiJavascript className={classes.skillIcon} />,
+      typescript: <SiTypescript className={classes.skillIcon} />,
+      nodejs: <SiNodedotjs className={classes.skillIcon} />,
+      nuxtjs: <SiNuxtdotjs className={classes.skillIcon} />,
+      contentful: <SiContentful className={classes.skillIcon} />,
+      jest: <SiJest className={classes.skillIcon} />,
+      cypress: <SiCypress className={classes.skillIcon} />,
+      git: <SiGit className={classes.skillIcon} />,
+      html5: <SiHtml5 className={classes.skillIcon} />,
+      css3: <SiCss3 className={classes.skillIcon} />,
+      sass: <SiSass className={classes.skillIcon} />,
+      azure: <SiAzuredevops className={classes.skillIcon} />,
+      kubernetes: <SiKubernetes className={classes.skillIcon} />,
+      postman: <SiPostman className={classes.skillIcon} />,
+      python: <SiPython className={classes.skillIcon} />,
+      ruby: <SiRuby className={classes.skillIcon} />,
+      microsoftazure: <SiMicrosoftazure className={classes.skillIcon} />,
+      amazonaws: <SiAmazonaws className={classes.skillIcon} />,
+    };
+    return icons[icon] || <SiReact className={classes.skillIcon} />;
   };
 
   return (
@@ -207,11 +181,7 @@ const Aboutme = () => {
               fontFamily="Gelasio"
               style={{ fontWeight: "50" }}
             >
-              Self-driven Front-End Developer with the ability to learn, adapt
-              and grow in different environments. Highly self-motivated,
-              responsible, with a get-it-done, on-time and high-quality product
-              spirit. A career changer who is ready to adapt and grow in the new
-              environment.
+             As a Software Developer at Mudbath (Endava), I collaborate closely with a diverse team to design, develop, and optimize software applications. My experience spans multiple projects, including a sophisticated e-commerce website that leverages the latest technologies. My areas of expertise encompass Vue.js, React, Nuxt.js, TypeScript, JavaScript, headless CMS Contentful, AZ-900 and AWS Certified Cloud Practitioner
             </Typography>
           </Box>
         </Box>
@@ -222,24 +192,15 @@ const Aboutme = () => {
             Skills
           </Typography>
         </Box>
-        <Grid
-          className={classes.progress}
-          container
-          alignItems="flex - start"
-          justifyContent="center"
-          columns={3}
-          wrap="wrap"
-        >
-          {skills.map((item) => {
-            return (
-              <Box className={classes.circle} key={item.id}>
-                <CircularProgressWithLabel
-                  language={item.languages}
-                  percentage={item.percentage}
-                />
-              </Box>
-            );
-          })}
+        <Grid className={classes.grid} container>
+          {skills.map((skill) => (
+            <Box className={classes.skillCard} key={skill.id}>
+              {getSkillIcon(skill.icon)}
+              <Typography className={classes.skillName}>
+                {skill.name}
+              </Typography>
+            </Box>
+          ))}
         </Grid>
       </Box>
     </Box>

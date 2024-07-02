@@ -30,39 +30,27 @@ export const products = [
 ];
 
 export const skills = [
-  {
-    id: 1,
-    languages: "Javascript",
-    percentage: 95,
-  },
-  {
-    id: 2,
-    languages: "React.js",
-    percentage: 95,
-  },
-  {
-    id: 3,
-    languages: "Python",
-    percentage: 85,
-  },
-  {
-    id: 4,
-    languages: "CSS",
-    percentage: 90,
-  },
-  {
-    id: 5,
-    languages: "HTML",
-    percentage: 90,
-  },
-  {
-    id: 6,
-    languages: "Material.ui",
-    percentage: 95,
-  },
-  {
-    id: 7,
-    languages: "Bootstrap",
-    percentage: 85,
-  },
+  { id: 1, name: "Vue.js", icon: "vuejs" },
+  { id: 2, name: "React", icon: "react" },
+  { id: 3, name: "JavaScript", icon: "javascript" },
+  { id: 4, name: "TypeScript", icon: "typescript" },
+  { id: 5, name: "Node.js", icon: "nodejs" },
+  { id: 6, name: "React Native", icon: "react" },
+  { id: 7, name: "Nuxt.js", icon: "nuxtjs" },
+  { id: 8, name: "Contentful", icon: "contentful" },
+  { id: 9, name: "VueStoreFront", icon: "vuejs" },
+  { id: 10, name: "Jest", icon: "jest" },
+  { id: 11, name: "Cypress", icon: "cypress" },
+  { id: 12, name: "Git", icon: "git" },
+  { id: 13, name: "HTML", icon: "html5" },
+  { id: 14, name: "CSS", icon: "css3" },
+  { id: 15, name: "SCSS", icon: "sass" },
+  { id: 16, name: "Azure DevOps", icon: "azure" },
+  { id: 17, name: "Kubernetes", icon: "kubernetes" },
+  { id: 18, name: "Postman", icon: "postman" },
+  { id: 19, name: "Python", icon: "python" },
+  { id: 20, name: "Ruby", icon: "ruby" },
+  // { id: 21, name: "Azure Fundamentals Certified", icon: "azure" },
+  // { id: 22, name: "AWS Cloud Practitioner Certified", icon: "amazonaws" },
 ];
+

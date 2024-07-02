@@ -82,27 +82,6 @@ const useStyles = makeStyles((theme) => ({
   ScrollLink: { display: "flex" },
 }));
 
-// Menu Listing
-// const menuItems = [
-//   {
-//     listIcon: <Home />,
-//     listText: "Home",
-//   },
-//   {
-//     listIcon: <AssignmentInd />,
-//     listText: "About Me",
-//   },
-//   {
-//     listIcon: <Apps />,
-//     listText: "Portfolio",
-//   },
-//   {
-//     listIcon: <ContactMail />,
-//     listText: "Contacts",
-//   },
-// ];
-
-// NavBar Starts Here
 const Navbar = () => {
   const [state, setState] = useState({
     right: false,
@@ -110,11 +89,11 @@ const Navbar = () => {
   const [resumeLink, setResumeLink] = useState("");
 
   useEffect(() => {
+    const gistsAddress = process.env.REACT_APP_GISTS_ADDRESS;
+    console.log("address", gistsAddress);
     const fetchResumeLink = async () => {
       try {
-        const response = await axios.get(
-          "https://api.github.com/gists/52bec37fc451749f69a76daa4c1235b5"
-        );
+        const response = await axios.get(gistsAddress);
         const resumeUrl = response.data.files["gistfile1.txt"].content;
         setResumeLink(resumeUrl);
       } catch (error) {
@@ -124,7 +103,6 @@ const Navbar = () => {
     fetchResumeLink();
   }, []);
 
-  //Toggle button
   const toggleDrawer = (slider, open) => () => {
     setState({ ...state, [slider]: open });
   };
@@ -221,19 +199,19 @@ const Navbar = () => {
         <Box className={classes.iconList}>
           <Box className={classes.bottomIcon}>
             <a
-              href="https://www.linkedin.com/in/denniskhor3139/"
+              href={process.env.REACT_APP_LINKEDIN_LINK}
               style={{ color: "inherit" }}
             >
               <LinkedIn sx={{ width: "35px", height: "35px" }} />
             </a>
           </Box>
           <Box className={classes.bottomIcon}>
-            <a href="mailto:denniskcc@hotmail.com" style={{ color: "inherit" }}>
+            <a href={`mailto:${process.env.REACT_APP_EMAIL}`} style={{ color: "inherit" }}>
               <MailOutlined sx={{ width: "35px", height: "35px" }} />
             </a>
           </Box>
           <Box className={classes.bottomIcon}>
-            <a href="https://github.com/imtripleq" style={{ color: "inherit" }}>
+            <a href={process.env.REACT_APP_GITHUB_LINK} style={{ color: "inherit" }}>
               <GitHub sx={{ width: "35px", height: "35px" }} />
             </a>
           </Box>
