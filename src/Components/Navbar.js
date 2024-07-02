@@ -79,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.between("xs", "md")]: {},
   },
   bottomIcon: { margin: "0px 10px" },
+  ScrollLink: { display: "flex" },
 }));
 
 // Menu Listing
@@ -123,7 +124,7 @@ const Navbar = () => {
     fetchResumeLink();
   }, []);
 
-    //Toggle button
+  //Toggle button
   const toggleDrawer = (slider, open) => () => {
     setState({ ...state, [slider]: open });
   };
@@ -149,38 +150,58 @@ const Navbar = () => {
       </Box>
       <Box className={classes.listcontainer}>
         <List>
-          <ListItem button key="1">
-            <ListItemIcon className={classes.icon}>
-              <Home />
-            </ListItemIcon>
-            <ScrollLink to="home" smooth={true} duration={500}>
+          <ScrollLink
+            to="home"
+            smooth={true}
+            duration={500}
+            className={classes.ScrollLink}
+          >
+            <ListItem button key="1">
+              <ListItemIcon className={classes.icon}>
+                <Home />
+              </ListItemIcon>
               <h3>Home</h3>
-            </ScrollLink>
-          </ListItem>
-          <ListItem button key="2">
-            <ListItemIcon className={classes.icon}>
-              <AssignmentInd />
-            </ListItemIcon>
-            <ScrollLink to="about" smooth={true} duration={500}>
+            </ListItem>
+          </ScrollLink>
+          <ScrollLink
+            to="about"
+            smooth={true}
+            duration={500}
+            className={classes.ScrollLink}
+          >
+            <ListItem button key="2">
+              <ListItemIcon className={classes.icon}>
+                <AssignmentInd />
+              </ListItemIcon>
               <h3>About Me</h3>
-            </ScrollLink>
-          </ListItem>
-          <ListItem button key="3">
-            <ListItemIcon className={classes.icon}>
-              <Apps />
-            </ListItemIcon>
-            <ScrollLink to="portfolio" smooth={true} duration={500}>
+            </ListItem>
+          </ScrollLink>
+          <ScrollLink
+            to="portfolio"
+            smooth={true}
+            duration={500}
+            className={classes.ScrollLink}
+          >
+            <ListItem button key="3">
+              <ListItemIcon className={classes.icon}>
+                <Apps />
+              </ListItemIcon>
               <h3>Portfolio</h3>
-            </ScrollLink>
-          </ListItem>
-          <ListItem button key="4">
-            <ListItemIcon className={classes.icon}>
-              <ContactMail />
-            </ListItemIcon>
-            <ScrollLink to="contact" smooth={true} duration={500}>
+            </ListItem>
+          </ScrollLink>
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            duration={500}
+            className={classes.ScrollLink}
+          >
+            <ListItem button key="4">
+              <ListItemIcon className={classes.icon}>
+                <ContactMail />
+              </ListItemIcon>
               <h3>Contact Me</h3>
-            </ScrollLink>
-          </ListItem>
+            </ListItem>
+          </ScrollLink>
           <a
             href={resumeLink}
             target="_blank"
